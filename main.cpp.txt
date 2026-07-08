@@ -1,0 +1,30 @@
+// public members
+#include <iostream>
+using namespace std;
+
+//CLASS DEFINITION 
+class Line {             // class Line:  defines a new data type called Line
+    public : 
+      double length; // This is a member variable (or attribute) that stores the length of the line.
+      void setLength( double len ); //  both setLength & getLength They tell the compiler that these functions belong to the Line class, but their actual logic is defined later.
+      double getLength( void );
+       // these length, setLength, getLength all are members who can access from outside the class 
+};
+// MEMBER FUNCTION DECLARATION 
+double Line::getLength( void ){ // This simply returns the current value of the length variable.
+    return length ;
+}
+void Line::setLength( double len ){
+    length = len;
+}
+
+int main() {
+    Line line;  // creating an object 
+    line.setLength(6.0); // calls the setter function to set the internal length to 6.0.
+    cout<<"Length of line : "<<line.getLength()<<endl;
+    
+    line.length = 10.2;
+    cout<<"length of line : "<<line.length<<endl;
+    
+    return 0;
+}
